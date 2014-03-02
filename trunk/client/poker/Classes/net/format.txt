@@ -1,0 +1,66 @@
+/*
+	/*
+ * {"body":[{"id":2,"type":0,"tUri":"BatchCommand.sendCommand","args":[{"version":"1","userid":"102", "sessionid":"a673f38e24c833c1143f5ece6c08a081",
+ * "commands":{
+ * "1":{"class":"User", "method":"loadUserInfo", "args":[{}]},
+ * "2":{"class":"Config", "method":"loadGlobalConfigs", "args":[{"dataversion":0}]}}, "notice":"0"}]}]}
+ *
+ *
+	*/
+	
+	
+	/*
+	{"body":[{"id":2,"type":0,"tUri":"Login.processLogin","args":[{"version":"1","logintype":"1", "deviceid":"aaaabbc"}]}]}
+	*/
+	
+	
+	// {"body":[{"id":1,"type":1,"res":{"errorcode":0,"userid":"103","sessionid":"45a32049d4ae7a24769a68d1a22a975d","time":1351060630}}]}
+	
+	
+	//{"body":[{"id":2,"type":0,"tUri":"Login.processLogin","args":[{"version":"1","logintype":"1", "deviceid":"aaaabbc"}]}]}
+	
+	
+	/**
+ * {"body":[{"id":1,"type":1,"res":{"errorcode":0,
+ "result":{
+ "1":{"errorcode":0,"dataversion":1,"data":{"cfg_building":[{"bid":"0","size":"4","name":"\u4e3b\u57ce","type":"0","attack_type":"0","attack_range_min":"0","attack_range_max":"0","attack_target":"0"}],"cfg_building_condition":[]}},
+ "2":{"uid":"103","name":"Watt","exp":"0","coin":"10000","mojo":"10000","gem":"10","level":"1","cup":"0","worker":"10","shield":null,"online":"0"},
+ "3":[{"rid":"2","uid":"103","bid":"0","level":"1","state":"1","start_time":"0","end_time":"0","pos_x":"0","pos_y":"0","resource_coin":null,"resource_mojo":null,"life":"1500","size":"4","type":"0"}]},
+ "userevent":{"level":-1,"exp":-1,"coin":-1,"mojo":-1,"gem":-1},
+ "noticeevent":0}}]}
+ */
+ 
+ /*
+ * {"body":[{"id":2,"type":0,"tUri":"BatchCommand.sendCommand","args":[{"version":"1","userid":"102", "sessionid":"a673f38e24c833c1143f5ece6c08a081",
+ * "commands":{
+ * "1":{"class":"User", "method":"loadUserInfo", "args":[{}]},
+ * "2":{"class":"Config", "method":"loadGlobalConfigs", "args":[{"dataversion":0}]}}, "notice":"0"}]}]}
+ *
+ *
+ *{"body":[{"id":2,"type":1,"res":{"errorcode":0,"result":
+ {"1":{"uid":"102","name":"Watt","exp":"0","coin":"10000","mojo":"10000","gem":"10","level":"1","cup":"0","worker":"10","shield":null,"online":"0"},
+ "2":{"errorcode":0,"dataversion":1,"data":{"cfg_building":[{"bid":"0","size":"4","name":"\u4e3b\u57ce","type":"0","attack_type":"0","attack_range_min":"0","attack_range_max":"0","attack_target":"0"}
+ ]}}},"userevent":{"level":-1,"exp":-1,"coin":-1,"mojo":-1,"gem":-1},"noticeevent":0}}]}
+ */
+ 
+ 
+ 
+ 
+ old move:
+ {"body" : [{"id" : 2,"type" : 0,"tUri" : "BatchCommand.sendCommand","args" : [{"version" : "1","userid" : "1005","sessionid" : "8d6517fa5e8d03a4d0f7bcd3d4e21ccf","notice" : "","commands" : {
+ "Building::move" : {"class" : "Building","method" : "move","time" : 1353555397,"args" : {"bid" : "0","newx" : "15","newy" : "19","rid" : "457","x" : "17","y" : "17"}},
+ "Building::move" : {"class" : "Building","method" : "move","time" : 1353555397,"args" : {"bid" : "22","newx" : "22","newy" : "17","rid" : "458","x" : "22","y" : "17"}},
+ "Building::move" : {"class" : "Building","method" : "move","time" : 1353555397,"args" : {"bid" : "15","newx" : "27","newy" : "23","rid" : "459","x" : "27","y" : "23"}},
+ "Building::move" : {"class" : "Building","method" : "move","time" : 1353555397,"args" : {"bid" : "15","newx" : "30","newy" : "30","rid" : "460","x" : "30","y" : "30"}}}}]}]}
+ 
+ new move:
+ {"body":[{"id":2,"type":0,"tUri":"BatchCommand.sendCommand","args":[{"version":"1","userid":"188", "sessionid":"4b7a1fcd5d159aaef68abad20d1b09ab", "commands":{"2":{"class":"Building", "method":"move", 
+ "args":{"elements":[
+ 
+ {"rid":425, "bid":22, "x":22, "y":17, "newx":30, "newy":30}, 
+ {"rid":426, "bid":15, "x":27, "y":23, "newx":22, "newy":17}, 
+ {"rid":0, "bid":15, "x":30, "y":30, "newx":27, "newy":23}
+ 
+ ]}, "time":1353552647}}, "notice":"0"}]}]}
+ 
+ 

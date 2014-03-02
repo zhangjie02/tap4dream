@@ -1,0 +1,112 @@
+#ifndef __spacewar__LocalizationKeys__
+#define __spacewar__LocalizationKeys__
+
+#include <iostream>
+class LocalizationKeys {
+public:
+	
+	static const char* machinedownloading_title;
+	static const char* machinedownloading_content;
+	static const char* levelup_betraise;
+	static const char* levelup_bonus;
+	static const char* coins;
+	static const char* dcoins;
+	static const char* needlevel;
+	static const char* ok;
+	static const char* lines;
+	static const char* bet;
+	static const char* totalbet;
+	static const char* win;
+	static const char* fivecombowow;
+	static const char* fivecomboinarow;
+	static const char* fivecombotellyourfriends;
+	static const char* share;
+	static const char* congratulations;
+	static const char* youhaveunlockedanewgame;
+	static const char* goodluck;
+	static const char* backtolobby;
+	static const char* backtogame;
+	static const char* settings;
+	static const char* settingsOn;
+	static const char* settingsOff;
+	static const char* rate;
+	static const char* connect;
+	static const char* disconnect;
+	static const char* music;
+	static const char* sound;
+	static const char* moreGame;
+	static const char* buy;
+	static const char* ago;
+	static const char* pricepool;
+	static const char* youhavecompleted;
+	static const char* freespins;
+	static const char* youwon;
+	static const char* freespinyouwon;
+	static const char* tournament;
+	static const char* yourrank;
+	static const char* yourprize;
+	static const char* pts;
+	static const char* thanks;
+	static const char* tour_ifo_title_1;
+	static const char* tour_ifo_1_1;
+	static const char* tour_ifo_1_2;
+	static const char* tour_ifo_1_3;
+	static const char* tour_ifo_1_4;
+	static const char* tour_ifo_title_2;
+	static const char* tour_ifo_2_1;
+	static const char* tour_ifo_2_2;
+	static const char* tour_ifo_2_3;
+	static const char* tour_ifo_2_4;
+	static const char* tour_ifo_title_3;
+	static const char* tour_ifo_3_1;
+	static const char* tour_ifo_3_2;
+	static const char* tour_ifo_3_3;
+	static const char* tour_ifo_3_4;
+	static const char* tour_ifo_title_4;
+	static const char* tour_ifo_4_1;
+	static const char* tour_ifo_4_2;
+	static const char* tour_ifo_4_3;
+	static const char* tour_ifo_4_4;
+	static const char* tour_ifo_title_5;
+	static const char* tour_ifo_5_1;
+	static const char* tour_ifo_5_2;
+	static const char* tour_ifo_5_3;
+	static const char* tour_no_history;
+	static const char* tour_his_title_tournaments;
+	static const char* tour_his_title_date;
+	static const char* tour_his_title_rank;
+	static const char* tour_his_title_prize;
+	static const char* tour_allprizes_title_place;
+	static const char* tour_allprizes_title_price;
+	static const char* tour_allprizes_to;
+	static const char* tour_stagescoreboard_players;
+	static const char* tour_scoreboard_wintorank;
+	static const char* tour_stagescoreboard_level;
+	static const char* rotary_collect;
+	static const char* bonusgongshi;
+	static const char* fri_tab_friends;
+	static const char* fri_tab_inbox;
+	static const char* fri_tab_gifts;
+	static const char* fri_tab_search;
+	static const char* dsend;
+	static const char* sdelete;
+	static const char* edit;
+	static const char* finish;
+	static const char* ignore;
+	static const char* agree;
+	static const char* daccept;
+	static const char* dreject;
+	static const char* dopen;
+	static const char* dadd;
+	static const char* dsearch;
+	static const char* frienSearchTip;
+	static const char* friend_share_tip;
+	static const char* friend_share_level_tip;
+	static const char* friend_share_five_line_tip;
+	static const char* friend_share_mega_win_tip;
+	static const char* friend_share_bonus_tip;
+	static const char* friends_send_str;
+
+
+};
+#endif /* defined(__spacewar__LocalizationKeys__) */

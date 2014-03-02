@@ -1,0 +1,265 @@
+class  CCBaseData : public CCObject
+{
+    CCBaseData* create(void);
+    CCBaseData();
+    ~CCBaseData();
+    virtual void copy(const CCBaseData *node);
+    virtual void subtract(CCBaseData *from, CCBaseData *to, bool limit);
+    virtual void setColor(const ccColor4B &color);
+    virtual ccColor4B getColor();
+
+    float x;
+    float y;               
+    int zOrder;         
+
+    float skewX;
+    float skewY;
+    float scaleX;
+    float scaleY;
+
+    float tweenRotate;
+
+    bool isUseColorInfo;
+    int a;
+    int r;
+    int g;
+    int b;
+};
+
+enum DisplayType 
+{
+    CS_DISPLAY_SPRITE,                //! display is a single CCSprite
+    CS_DISPLAY_ARMATURE,         //! display is a CCArmature
+    CS_DISPLAY_PARTICLE,            //! display is a CCParticle.
+
+    CS_DISPLAY_MAX
+};
+
+class  CCDisplayData : public CCObject
+{
+public:
+    static CCDisplayData* create();
+
+    static const char *changeDisplayToTexture(const char *displayName);
+public:
+    CCDisplayData();
+    virtual ~CCDisplayData(void);
+
+    DisplayType displayType;    //! mark which type your display is
+};
+
+class  CCSpriteDisplayData : public CCDisplayData {
+public:
+   static CCSpriteDisplayData* create();
+   CCSpriteDisplayData();
+   virtual ~CCSpriteDisplayData();
+
+   void setParam(const char *displayName);
+   void copy(CCSpriteDisplayData *displayData);
+
+   string displayName;
+   bool flipX;
+   CCBaseData skinData;
+};
+
+class  CCArmatureDisplayData  : public CCDisplayData {
+public:
+    static CCArmatureDisplayData* create();
+    CCArmatureDisplayData();
+    virtual ~CCArmatureDisplayData();
+    void setParam(const char *displayName);
+    void copy(CCArmatureDisplayData *displayData);
+
+    string displayName;
+};
+
+class  CCParticleDisplayData : public CCDisplayData {
+public:
+    static CCParticleDisplayData* create();
+    CCParticleDisplayData();
+    ~CCParticleDisplayData();
+    void setParam(const char *plist);
+    void copy(CCParticleDisplayData *displayData);
+    string plist;
+};
+
+class  CCBoneData : public CCBaseData
+{
+public:
+    static CCBoneData* create();
+    CCBoneData();
+    ~CCBoneData();
+
+    virtual bool init();
+
+    void addDisplayData(CCDisplayData *displayData);
+    CCDisplayData *getDisplayData(int index);
+    string name;          
+    string parentName;     
+    CCArray displayDataList;
+    CCAffineTransform boneDataTransform;
+};
+
+class  CCArmatureData : public CCObject
+{
+public:
+    static CCArmatureData* create();
+    CCArmatureData();
+    ~CCArmatureData();
+
+    bool init();
+    void addBoneData(CCBoneData *boneData);
+    CCBoneData *getBoneData(const char *boneName);
+    string name;
+    CCDictionary boneDataDic;
+    float dataVersion;
+};
+
+enum CCBlendType
+{
+    BLEND_NORMAL,
+    BLEND_LAYER,
+    BLEND_DARKEN,
+    BLEND_MULTIPLY,
+    BLEND_LIGHTEN,
+    BLEND_SCREEN,
+    BLEND_OVERLAY,
+    BLEND_HARD_LIGHT,
+    BLEND_ADD,
+    BLEND_SUBSTRACT,
+    BLEND_DIFFERENCE,
+    BLEND_INVERT,
+    BLEND_ALPHA,
+    BLEND_ERASE
+};
+
+class  CCFrameData : public CCBaseData
+{
+public:
+    static CCFrameData* create();
+    CCFrameData();
+    ~CCFrameData();
+
+    virtual void copy(const CCBaseData *node);
+    int frameID;
+    int duration;  
+    CCTweenType tweenEasing;
+    bool isTween;
+
+    int displayIndex;
+
+    CCBlendType blendType;
+
+    string strEvent;
+    string strMovement;
+    string strSound;
+    string strSoundEffect;
+};
+
+class  CCMovementBoneData : public CCObject
+{
+public:
+    static CCMovementBoneData* create();
+    CCMovementBoneData();
+    ~CCMovementBoneData();
+
+    virtual bool init();
+
+    void addFrameData(CCFrameData *frameData);
+    CCFrameData *getFrameData(int index);
+public:
+    float delay; 
+    float scale;  
+    float duration;
+    string name;
+
+    CCArray frameList;
+};
+
+class  CCMovementData : public CCObject
+{
+public:
+    static CCMovementData* create();
+    CCMovementData(void);
+    ~CCMovementData(void);
+
+    void addMovementBoneData(CCMovementBoneData *movBoneData);
+    CCMovementBoneData *getMovementBoneData(const char *boneName);
+public:
+    string name;
+    int duration;       
+    float scale;
+
+    int durationTo;
+
+    int durationTween;
+
+    bool loop;
+
+    CCTweenType tweenEasing;
+    CCDictionary movBoneDataDic;
+};
+
+class  CCAnimationData : public CCObject
+{
+public:
+    static CCAnimationData* create();
+    CCAnimationData(void);
+    ~CCAnimationData(void);
+
+    void addMovement(CCMovementData *movData);
+    CCMovementData *getMovement(const char *movementName);
+    int getMovementCount();
+public:
+    string name;
+    int frameRate;
+    CCDictionary movementDataDic;
+    vector<string> movementNames;
+};
+
+struct CCContourVertex2 : public CCObject
+{
+    CCContourVertex2(float x, float y);
+
+    float x;
+    float y;
+};
+
+class  CCContourData : public CCObject
+{
+public:
+    static CCContourData* create();
+public:
+    CCContourData();
+    ~CCContourData(void);
+
+    virtual bool init();
+    virtual void addVertex(CCPoint *vertex);
+public:
+    CCArray vertexList;
+};
+
+class  CCTextureData : public CCObject
+{
+public:
+    static CCTextureData* create();
+
+    CCTextureData();
+    ~CCTextureData(void);
+
+    virtual bool init();
+
+    void addContourData(CCContourData *contourData);
+    CCContourData *getContourData(int index);
+
+    float height;
+    float width;
+
+    float pivotX; 
+    float pivotY;
+
+    string name; 
+
+    CCArray contourDataList;
+};
+

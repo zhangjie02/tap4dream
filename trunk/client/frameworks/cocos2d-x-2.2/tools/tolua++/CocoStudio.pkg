@@ -1,0 +1,11 @@
+$#include "LuaCocoStudio.h"
+
+$pfile "CCArmature.pkg"
+$pfile "CCArmatureAnimation.pkg"
+$pfile "CCSkin.pkg"
+$pfile "CCBone.pkg"
+$pfile "CCArmatureDataManager.pkg"
+$pfile "CCBatchNode.pkg"
+$pfile "CCTween.pkg"
+$pfile "CCDatas.pkg"
+$pfile "CCDisplayManager.pkg"

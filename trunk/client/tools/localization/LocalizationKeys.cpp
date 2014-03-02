@@ -1,0 +1,3 @@
+#include "LocalizationKeys.h"
+
+${definition}
